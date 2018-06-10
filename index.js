@@ -1,5 +1,4 @@
-const app = require('./config/app')
-const csv=require('csvtojson')
+const app = require('./server/app')
 const PORT = parseInt(process.env.PORT, 10) || 3000
 app.set('port', PORT)
 
