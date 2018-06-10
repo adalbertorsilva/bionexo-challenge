@@ -61,4 +61,10 @@ describe('UBS Controller --> getParamValue', () => {
       expect(ubsController.getParamValue('page', 10, '')).toHaveProperty('page', 10)
     })
   })
+
+  describe('when the correct values are passed and the desired value is null', () => {
+    it('must return an object with an attribute with the same name of the first parameter', () => {
+      expect(ubsController.getParamValue('page', 10)).toHaveProperty('page', 10)
+    })
+  })
 })
