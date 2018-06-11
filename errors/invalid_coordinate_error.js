@@ -6,7 +6,7 @@ class InvalidCoordinateError extends Error {
     super()
     autoBind(this)
     this.status = 422
-    this.message = 'A coordinates is missing'
+    this.message = 'Coordinate must be a number'
   }
 }
 

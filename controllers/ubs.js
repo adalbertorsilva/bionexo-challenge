@@ -49,9 +49,17 @@ class UBSController {
     return obj
   }
 
+  getParamsObject (params) {
+    return {
+      coordinates: this.getCoordinates(params.query),
+      ...this.getParamValue('page', 1, params.page),
+      ...this.getParamValue('per_page', 10, params.page)
+    }
+  }
+
   async getUBSs (req, res) {
     try {
-      this.getCoordinates(req.query.query)
+      const paramsObject = this.getParamsObject(req.query)
     } catch (error) {
       res.status(error.status).send({message: error.message})
     }

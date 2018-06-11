@@ -67,4 +67,21 @@ describe('UBS Controller --> getParamValue', () => {
       expect(ubsController.getParamValue('page', 10)).toHaveProperty('page', 10)
     })
   })
+
+  describe('when passing a full query params', () => {
+    it('must return an object with the param values', () => {
+      const params = {
+        query: '-23.604936,-46.692999',
+        page: '1',
+        per_page: '1'
+      }
+      const paramsObject = ubsController.getParamsObject(params)
+
+      expect(paramsObject).toHaveProperty('coordinates')
+      expect(paramsObject.coordinates).toHaveProperty('lat', '-23.604936')
+      expect(paramsObject.coordinates).toHaveProperty('long', '-46.692999')
+      expect(paramsObject).toHaveProperty('page', 1)
+      expect(paramsObject).toHaveProperty('per_page', 1)
+    })
+  })
 })
