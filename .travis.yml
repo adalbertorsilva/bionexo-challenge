@@ -1,9 +1,13 @@
 language: node_js
 services:
-- postgresql
+  - postgresql
+before_script:
+  - psql -U postgres -c "create extension postgis"
 script:
-- NODE_ENV=test npm run build:database
-- npm test
+  - NODE_ENV=test npm run build:database
+  - "NODE_ENV=test npm run migrate"
+  - "NODE_ENV=test npm run seed"
+  - npm test
 deploy:
   provider: heroku
   skip_cleanup: true

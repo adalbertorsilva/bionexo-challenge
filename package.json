@@ -7,7 +7,8 @@
     "start": "npm run build:database; npm run migrate; node index.js",
     "test": "NODE_ENV=test npx sequelize db:migrate ;jest --forceExit --verbose --detectOpenHandles",
     "migrate": "npx sequelize db:migrate",
-    "build:database": "npx sequelize db:create"
+    "build:database": "npx sequelize db:create",
+    "seed": "npx sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
