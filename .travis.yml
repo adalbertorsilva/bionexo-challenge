@@ -1,6 +1,11 @@
 language: node_js
 services:
   - postgresql
+addons:
+  postgresql: 9.6
+  apt:
+    packages:
+    - postgresql-9.6-postgis-2.3
 # before_install:
 #   - sudo apt-get update -qq
 #   - sudo apt-get install -y libpixman-1-dev libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev graphicsmagick build-essential gcc g++ postgresql-9.5-postgis-2.2 postgresql-9.5-postgis-scripts postgis
