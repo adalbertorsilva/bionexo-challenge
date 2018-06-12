@@ -1,5 +1,6 @@
 module.exports = {
   collectCoverage: true,
   coverageReporters: ['html'],
-  globalSetup: './jest/jest-suite-setup.js'
+  globalSetup: './jest/jest-suite-setup.js',
+  silent: true
 }
