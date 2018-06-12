@@ -1,11 +1,10 @@
 language: node_js
 services:
   - postgresql
+addons:
+  postgresql: "10"
 before_script:
-  - psql -c 'create database travis_postgis;' -U postgres
-  - psql -c 'CREATE EXTENSION postgis;' -U postgres -d travis_postgis
-  - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d travis_postgis
-  - psql -f test_data.sql -U postgres -d travis_postgis
+  - psql -U postgres -c "create extension postgis"
 script:
   - NODE_ENV=test npm run build:database
   - NODE_ENV=test npm run migrate
