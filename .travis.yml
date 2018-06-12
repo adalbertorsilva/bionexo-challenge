@@ -1,0 +1,14 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+services:
+- postgresql
+script:
+- NODE_ENV=test npm run build:database
+- npm test
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  api_key:
+    secure: "XOlvvxjSGZ/0yN8zQWZjRHIZ3Kp1w9MdRNvWIbV0+d20QA7EpxXQs++JYh3donT1iCM5nT7qJFrsW2lmHecT4TxyZ8x0ouANxaAovQ/pjUeCEU2t4RYHBqTQA7G3ocCESdMMso1uJMcn/tHp/Jlw0fYNm0A1UaJIIp+Qq9Ty83CNbRLCzuFi6DPux9/AtXKpX4wPdBN5OiOcYEX8kTgAx4XaOA5qvBVk+GHoB2UZNlqPGbUBh/bG2fYK2j0z1Gq/lNahLCi3ic2CiwPhU50qe1qznZDJuplBUK0ej8oOXc8jheRtvE4mo/TTTVMr8imbfU6WDA14hV6fhLnaf0eriK+EoWY0NJ0UUCdveAsSdPg6+lHda8+4RVZh9202vLKhGbCYX994lDd23loQkZYltkNyRSH4kR8IDCnxTpHPIC0MOgPbO5p3fHxvTLpIRD7ED7vp0Yl2ORELsfFQfA6WshMuSdjX9CctoWXSs4eOH3mlA29h8PYkTfIDwCzY7hGGyg38Nfo0Z630HiS+V8h1pUpc7BufJunouRxdmb+3iKiL6do5gbwL+DGkiRmYAR33gyQFYn4PPufuZ8AyLxXESLlMJDU/dXi2poXu65JiQI7WMQJYvk5NKAsfarX52sZz3eyuuvl1aAyZSuKg9JudGEQdfOMd4EB9s99eTkUYFIU="
