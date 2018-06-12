@@ -1,9 +1,12 @@
 language: node_js
 services:
   - postgresql
+before_cript:
+  - 
 script:
   - NODE_ENV=test npm run build:database
-  - NODE_ENV=test npm run migrate
+  - psql -c 'CREATE EXTENSION postgis;' -U postgres -d travis_postgis
+  # - NODE_ENV=test npm run migrate
   # - NODE_ENV=test npm run seed
   - npm test
 deploy:
