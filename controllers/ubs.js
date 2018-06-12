@@ -62,6 +62,8 @@ class UBSController {
   async getUBSs (req, res) {
     try {
       const paramsObject = this.getParamsObject(req.query)
+
+      console.log('CHEGA AQUI ???????')
       const UBSs = await UBS.findUBSsAround(paramsObject)
       res.status(200).send(UBSs)
     } catch (error) {
