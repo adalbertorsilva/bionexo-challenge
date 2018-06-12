@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
     static paginateResult (resultData, params) {
       const paginationBegin = (params.page - 1) * params.per_page
       const paginationEnd = paginationBegin + params.per_page
-      return resultData[0].slice(paginationBegin, paginationEnd)
+      return resultData.slice(paginationBegin, paginationEnd)
     }
 
     static responseObject (resultData, params) {
@@ -48,15 +48,14 @@ module.exports = (sequelize) => {
       return {
         current_page: params.page,
         per_page: params.per_page,
-        total_entries: resultData[0].length,
+        total_entries: resultData.length,
         entries
       }
     }
 
-    static async findNotifiedAreas (params) {
+    static async findUBSsAround (params) {
       const resultData = await sequelize.query('SELECT * FROM "UBs" AS ubs JOIN "Geocodes" AS geocode ON (ubs.id = geocode.ubs_id) JOIN "Scores" AS score ON (ubs.id = score.ubs_id) WHERE ST_DWithin(geocode.point::geography, ST_MakePoint(:longitude,:latitude)::geography, 10000) ORDER BY ubs.id', {replacements: { longitude: params.coordinates.long, latitude: params.coordinates.lat }})
-      console.log('RESULTADO -----------------------> ', resultData[0][0])
-      return UBS.responseObject(resultData, params)
+      return UBS.responseObject(resultData[0], params)
     }
   }
 
