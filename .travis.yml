@@ -1,12 +1,10 @@
 language: node_js
 services:
   - postgresql
-addons:
-  postgresql: "10"
 script:
   - NODE_ENV=test npm run build:database
-  - NODE_ENV=test npm run migrate
-  - NODE_ENV=test npm run seed
+  # - NODE_ENV=test npm run migrate
+  # - NODE_ENV=test npm run seed
   - npm test
 deploy:
   provider: heroku
