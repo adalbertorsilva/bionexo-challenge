@@ -60,7 +60,7 @@ module.exports = {
     const persistedUBSs = await models.UBS.findAll()
 
     const geocodes = formatAssociatedDataToPersist(rawData, persistedUBSs, 'geocode')
-    const scores = formatAssociatedDataToPersist(rawData, persistedUBSs, 'geocode')
+    const scores = formatAssociatedDataToPersist(rawData, persistedUBSs, 'scores')
 
     console.log('Persisting Geocodes...')
     await models.Geocode.bulkCreate(geocodes, {raw: true})

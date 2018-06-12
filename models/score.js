@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
       return super.init({
         size: DataTypes.INTEGER,
         adaptation_for_seniors: DataTypes.INTEGER,
-        medical_equipment: DataTypes.INTEGER,
+        medical_equipament: DataTypes.INTEGER,
         medicine: DataTypes.INTEGER,
         ubs_id: DataTypes.INTEGER
       }, {sequelize, underscored: true, timestamps: false})

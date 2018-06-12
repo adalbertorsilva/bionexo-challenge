@@ -5,6 +5,8 @@ const { missing_coordinate_error: MissingCoordinateError,
   invalid_coordinate_error: InvalidCoordinateError,
   invalid_param_error: InvalidParamError } = require('../errors')
 
+const { UBS } = require('../models')
+
 class UBSController {
   constructor () {
     autoBind(this)
@@ -60,6 +62,8 @@ class UBSController {
   async getUBSs (req, res) {
     try {
       const paramsObject = this.getParamsObject(req.query)
+      const UBSs = await UBS.findNotifiedAreas(paramsObject)
+      res.status(200).send(UBSs)
     } catch (error) {
       res.status(error.status).send({message: error.message})
     }

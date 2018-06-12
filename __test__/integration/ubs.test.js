@@ -26,5 +26,16 @@ describe('Basic Health Unit', () => {
         expect(response.body).toHaveProperty('message', 'Coordinate must be a number')
       })
     })
+
+    describe('when getting with non number coordinate param', () => {
+      it('must return a 200 status and and a list of objects', async () => {
+        const response = await request(app).get('/find_ubs?query=-23.604936,-46.692999&page=1&per_page=1')
+        expect(response.status).toBe(200)
+        expect(response.body).toHaveProperty('current_page', 1)
+        expect(response.body).toHaveProperty('total_entries', 122)
+        expect(response.body).toHaveProperty('entries')
+        expect(response.body.entries)
+      })
+    })
   })
 })

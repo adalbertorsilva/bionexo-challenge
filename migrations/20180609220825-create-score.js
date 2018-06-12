@@ -14,7 +14,7 @@ module.exports = {
       adaptation_for_seniors: {
         type: Sequelize.INTEGER
       },
-      medical_equipment: {
+      medical_equipament: {
         type: Sequelize.INTEGER
       },
       medicine: {
