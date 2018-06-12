@@ -3,8 +3,6 @@ services:
   - postgresql
 addons:
   postgresql: "10"
-before_script:
-  - psql -U postgres -c "create extension postgis"
 script:
   - NODE_ENV=test npm run build:database
   - NODE_ENV=test npm run migrate
