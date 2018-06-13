@@ -19,7 +19,7 @@
     "username": "postgres",
     "password": "junior",
     "database": "bionexo_production",
-    "host": "127.0.0.1",
+    "host": "postgres://kirlwtdcaeveiy:e24e3d032d57565932625dba52b08a950325619e9360c2f9e0ab93efbef6eb0c@ec2-54-204-2-26.compute-1.amazonaws.com:5432/d55b40523pv55g",
     "dialect": "postgres"
   }
 }

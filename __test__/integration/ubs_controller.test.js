@@ -27,7 +27,7 @@ describe('Basic Health Unit', () => {
       })
     })
 
-    describe('when getting with alle params set', () => {
+    describe('when getting with all params set', () => {
       it('must return a 200 status and and a list of objects', async () => {
         const response = await request(app).get('/find_ubs?query=-23.604936,-46.692999&page=1&per_page=1')
         expect(response.status).toBe(200)

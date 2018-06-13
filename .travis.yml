@@ -6,17 +6,9 @@ addons:
   apt:
     packages:
     - postgresql-9.6-postgis-2.3
-# before_install:
-#   - sudo apt-get update -qq
-#   - sudo apt-get install -y libpixman-1-dev libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev graphicsmagick build-essential gcc g++ postgresql-9.5-postgis-2.2 postgresql-9.5-postgis-scripts postgis
-#   - type shp2pgsql
 before_script:
   - psql -c 'CREATE DATABASE bionexo_test;' -U postgres
-  # - psql -c 'CREATE EXTENSION postgis;' -U postgres -d bionexo_test
 script:
-  # - NODE_ENV=test npm run build:database
-  # - NODE_ENV=test npm run migrate
-  # - NODE_ENV=test npm run seed
   - npm test
 deploy:
   provider: heroku
