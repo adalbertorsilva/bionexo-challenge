@@ -8,9 +8,6 @@ addons:
     - postgresql-9.6-postgis-2.3
 before_script:
   - psql -c 'CREATE DATABASE bionexo_test;' -U postgres
-script:
-  - npm install
-  - npm test
 deploy:
   provider: heroku
   skip_cleanup: true
