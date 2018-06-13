@@ -45,7 +45,7 @@ nvm install && npm install && npm start
 ```
 instead the command above ( it will install and use the node version wich the app was created )
 
-The app will start on port 3000
+- The app will start on port 3000
 
 ### ( OPTIONAL ) Docker instalation
 
@@ -54,6 +54,8 @@ The app will start on port 3000
 ```
 $ docker-compose up
 ```
+
+- This comand will install the app on porte 3000 and a postgres data base on port 5433
 
 ### Running Tests
 
