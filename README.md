@@ -45,19 +45,19 @@ npm install && npm start
 ```
 nvm install && npm install && npm start
 ```
-instead the command above ( it will install and use the node version wich the app was created )
+instead of the command on the previous section ( it will install and use the node version wich the app was created )
 
 - The app will start on port 3000
 
 ### ( OPTIONAL ) Docker instalation
 
-- If you have docker and docker-compose on your computer you may install the application by clonning the repo change fot the project's directory and run the command: 
+- If you have docker and docker-compose on your computer you may install the application by clonning the repo, change for the project's directory and run the command: 
 
 ```
 $ docker-compose up
 ```
 
-- This comand will install the app on porte 3000 and a postgres data base on port 5433
+- This comand will install the app on porte 3000 and a postgres database on port 5433
 
 ### Running Tests
 
