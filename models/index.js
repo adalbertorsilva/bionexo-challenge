@@ -1,12 +1,13 @@
 'use strict'
 
-var fs = require('fs')
-var path = require('path')
-var Sequelize = require('sequelize')
-var basename = path.basename(__filename)
-var env = process.env.NODE_ENV || 'development'
-var config = require(`${__dirname}/../config/config.js`)[env]
-var db = {}
+const fs = require('fs')
+const path = require('path')
+const Sequelize = require('sequelize')
+const basename = path.basename(__filename)
+const env = process.env.NODE_ENV || 'development'
+const config = require(`../config/config.js`)[env]
+require('dotenv').config()
+const db = {}
 
 let sequelize
 if (config.use_env_variable) {
@@ -21,7 +22,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js')
   })
   .forEach(file => {
-    var model = sequelize.import(path.join(__dirname, file))
+    const model = sequelize.import(path.join(__dirname, file))
     db[model.name] = model.init(sequelize)
   })
 
