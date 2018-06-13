@@ -32,7 +32,7 @@ cd bionexo-challenge/
 - Inside your terminal, run the command to start application
 
 ```
-npm start
+npm install && npm start
 ```
 
 The app will start on port 3000
