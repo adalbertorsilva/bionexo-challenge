@@ -4,7 +4,7 @@
   "description": "Bionexo Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:database; npm run migrate; node index.js",
+    "start": "npm run build:database; npm run migrate; npm run seed; node index.js",
     "test": "NODE_ENV=test npx sequelize db:migrate ;jest --forceExit  --verbose --detectOpenHandles",
     "migrate": "npx sequelize db:migrate",
     "build:database": "npx sequelize db:create",
