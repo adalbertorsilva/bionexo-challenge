@@ -55,15 +55,13 @@ class UBSController {
     return {
       coordinates: this.getCoordinates(params.query),
       ...this.getParamValue('page', 1, params.page),
-      ...this.getParamValue('per_page', 10, params.page)
+      ...this.getParamValue('per_page', 10, params.per_page)
     }
   }
 
   async getUBSs (req, res) {
     try {
       const paramsObject = this.getParamsObject(req.query)
-
-      console.log('CHEGA AQUI ???????')
       const UBSs = await UBS.findUBSsAround(paramsObject)
       res.status(200).send(UBSs)
     } catch (error) {
