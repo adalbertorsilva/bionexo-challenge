@@ -2,6 +2,8 @@
 
 This is a sample solution for Bionexo's hiring challenge.
 
+- The challenge consists in an app the Health Basic Units based on geolocation coordinates ( latitude and longitude ), by default a 10km radius search was set
+
 ## Getting Started
 
 ### Prerequisites
