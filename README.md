@@ -8,6 +8,7 @@ This is a sample solution for Bionexo's hiring challenge.
 
 - Node.js 8.9.4 or higher
 - NPM 5.7.1 or higher
+- ( Optional ) [NVM](https://github.com/creationix/nvm)
 - [Postgres](https://www.postgresql.org/download/) database 9.6 or higher with [Postgis](https://postgis.net/install/) extension
 - Git
 - ( Optional ) Docker 18.03.1 or higher
@@ -35,7 +36,24 @@ cd bionexo-challenge/
 npm install && npm start
 ```
 
+( OPTIONAL )
+
+- If you have nvm installed on your computer run the commmand
+
+```
+nvm install && npm install && npm start
+```
+instead the command above ( it will install and use the node version wich the app was created )
+
 The app will start on port 3000
+
+### ( OPTIONAL ) Docker instalation
+
+- If you have docker and docker-compose on your computer you may install the application by clonning the repo change fot the project's directory and run the command: 
+
+```
+$ docker-compose up
+```
 
 ### Running Tests
 
