@@ -4,6 +4,8 @@ This is a sample solution for Bionexo's hiring challenge.
 
 - The challenge consists in an app the Health Basic Units based on geolocation coordinates ( latitude and longitude ), by default a 10km radius search was set
 
+- This API can be tested live at [Heroku](https://bionexo-challenge.herokuapp.com/find_ubs?query=-23.604936,-46.692999&page=1&per_page=10)
+
 ## Getting Started
 
 ### Prerequisites
