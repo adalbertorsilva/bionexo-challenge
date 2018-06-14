@@ -32,9 +32,9 @@ git clone https://github.com/adalbertorsilva/bionexo-challenge.git
 cd bionexo-challenge/
 ```
 
-- Create a .env file on root directory and set an DATABASE_HOST, DATABASE_PASSWORD and DATABASE_USER variables on it
+- Create a .env file on root directory and set an DATABASE_HOST, DATABASE_PASSWORD, DATABASE_USER and DATABASE_NAME (only for production enviroment) variables on it
 
-- Inside your terminal, run the command to start application
+- Inside your terminal, run the command below to start application
 
 ```
 npm install && npm start
